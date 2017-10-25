@@ -24,14 +24,24 @@ var listOfCars = [
   'Cadillac Escalade'
 ]
 
-// (a) make the .map function work
-var listOfCarObjects = listOfCars.map(function(){
+let listOfCarObjects = listOfCars.map(function(e){
 
+let autosMakeModel = e.split(' ');
+let objCars = {} //Hago un objeto
+objCars.make = autosMakeModel[0]//Creo prpopiedad marca
+objCars.model = autosMakeModel[1]//Creo propiedad modelo
+
+return objCars;//Regreso un Array de objetos con las propuedades marca y modelo
 })
-
-
+// console.log(listOfCarObjects);
 // (b) you code for part-b below...
+let listCarModels = listOfCarObjects.map(function(elem) {
+let carModel = elem.model;
+return `<span>${carModel}</span>`
 
+
+}).join('')
+document.querySelector('.cars-container').innerHTML = listCarModels
 
 
 //--------- Tests for part (a) ---------//

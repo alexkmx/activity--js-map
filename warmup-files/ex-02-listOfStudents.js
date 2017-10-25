@@ -43,7 +43,30 @@ var listOfStudents = [
 ]
 
 
+let studentAgesList = listOfStudents.map(function(ele) {
+let edades = ele.age;
 
+return edades
+})
+
+let listOfStudentsPlusEmail = listOfStudents.map(function(email) {
+let firstMinus = email.first[0].toLowerCase();
+let lastMinus = email.last.toLowerCase();
+let eMail = firstMinus+lastMinus+'@happygroup.com';
+let arrayStudents = {}
+arrayStudents.first = email.first
+arrayStudents.last = email.last
+arrayStudents.gender = email.gender
+arrayStudents.age = email.age
+arrayStudents.email = eMail
+
+// console.log(arrayStudents);
+return arrayStudents
+})
+// console.log(listOfStudentsPlusEmail);
+// listOfStudents.email = listOfStudentsPlusEmail
+
+// console.log(listOfStudentsPlusEmail);
 //--------- Tests for part (a) ---------//
 
 // +1 Check that studentAges is NOT undefiend and is an array
